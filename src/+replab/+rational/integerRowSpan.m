@@ -10,6 +10,9 @@ function [intBasisOpt isOrtho] = integerRowSpan(basis)
 %
 % It also uses the heuristic that the orthogonal projector on the original space has rational coefficients.
 %
+% WARNING: This modified has been changed for testing, it can sometimes produce a
+%          non-integer basis if this produces nicer coefficients.
+%
 % Args:
 %   basis (double matrix): Basis of dimension nRows x nCols with nRows <= nCols
 %
@@ -47,8 +50,9 @@ function [intBasisOpt isOrtho] = integerRowSpan(basis)
     assert(length(jb) == nRows);
     [num den] = replab.rational.attemptRecoverRational(U);
     if isempty(num)
-        intBasisOpt = [];
-        isOrtho = [];
+        % Keep the stabilized basis
+        intBasisOpt = U./(sqrt(diag(U*U'))*ones(1,size(U,2)));
+        isOrtho = true;
     else
         afterGS = replab.rational.integerGramSchmidt(num);
         if isempty(afterGS)

@@ -49,6 +49,11 @@ function sub = splitUsingCommutant(rep, samples, sub)
         if isreal(UTrivial)
             [VTrivial isOrtho] = replab.rational.integerRowSpan(UTrivial);
             assert(size(VTrivial, 1) == nTrivial);
+            % If the result is not integer, we override the previous numerical basis
+            if ~isequal(VTrivial, round(VTrivial))
+                UTrivial = VTrivial;
+                VTrivial = [];
+            end
         else
             VTrivial = [];
         end
@@ -95,9 +100,14 @@ function sub = splitUsingCommutant(rep, samples, sub)
                 UIrrep = rec;
             end
         end
-        % try to recover an integer basis
+        % try to recover an integer or simply nicer basis
         if isreal(UIrrep)
             VIrrep = replab.rational.integerRowSpan(UIrrep);
+            % If the result is not integer, we override the previous numerical basis
+            if ~isequal(VIrrep, round(VIrrep))
+                UIrrep = VIrrep;
+                VIrrep = [];
+            end
         else
             VIrrep = [];
         end
