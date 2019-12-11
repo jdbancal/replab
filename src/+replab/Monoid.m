@@ -1,6 +1,69 @@
 classdef Monoid < replab.Domain
 % Describes a monoid
-    
+%
+% .. raw:: html
+% 
+%    <h3>Methods</h3>
+%
+% - `Str.additionalFields` -- additional name/value pairs
+% - `Domain.assertNotEqv` -- compare two elements
+% - `Domain.assertEqv` -- compare two elements
+% - `compose` -- Composes two monoid/group elements
+% - `composeAll` --
+% - `composeN` -- Computes y = x^n by repeated squaring
+% - `Str.disp` --
+% - `Str.eq` -- equality test
+% - `Str.headerStr` -- Tiny single line description of the current object type
+% - `Str.hiddenFields` -- Fields that should not be printed
+% - `isIdentity` -- Returns true if x is the identity, false otherwise
+% - `lambda` -- Constructs a monoid from function handles
+% - `Str.longStr` -- Multi-line description of the current object
+% - `Str.shortStr` -- Single line text description of the current object
+%
+% .. raw:: html
+%
+%    <hr>
+
+
+% .. raw:: html
+% 
+%    <details><summary><big>Methods</big></summary><p>
+%
+% - `Domain.assertNotEqv` -- compare two elements
+% - `Domain.assertEqv` -- compare two elements
+% - `compose` -- Composes two monoid/group elements
+% - `composeAll` -- 
+% - `composeN` -- Computes y = x^n by repeated squaring
+% - `isIdentity` -- Returns true if x is the identity, false otherwise
+% - `lambda` -- Constructs a monoid from function handles
+%
+% .. raw:: html
+% 
+%    </p>
+%    </details>
+%    <hr>
+
+
+
+% .. raw:: html
+% 
+%    <h3>Methods</h3>
+%
+% =====================  ====================
+% `Domain.assertNotEqv`  compare two elements
+% `Domain.assertEqv`     compare two elements
+% `compose`              Composes two monoid/group elements
+% `composeAll`           
+% `composeN`             Computes y = x^n by repeated squaring
+% `isIdentity`           Returns true if x is the identity, false otherwise
+% `lambda`               Constructs a monoid from function handles
+% =====================  ====================
+
+
+
+
+
+   
     properties (SetAccess = protected)
         identity;
     end
@@ -74,7 +137,7 @@ classdef Monoid < replab.Domain
             b = self.eqv(x, self.identity);
         end
         
-    end
+   end
 
     methods (Static)
         
@@ -93,7 +156,7 @@ classdef Monoid < replab.Domain
             monoid = replab.lambda.Monoid(header, eqvFun, sampleFun, ...
                                           composeFun, identity);
         end
-        
+
     end
     
 end
