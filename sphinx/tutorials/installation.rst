@@ -82,7 +82,7 @@ mentioned above, and a few variables mush be initialized. This can be done with
 
     replab_init
 
-which should lead to the following output
+which should lead to an output similar to the following:
 
 ::
 

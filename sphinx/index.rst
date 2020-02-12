@@ -25,7 +25,7 @@ It is compatible with both `MATLAB <https://www.mathworks.com/products/matlab.ht
    :align: center
    :figclass: align-center responsive
 
-   Decomposition of the :math:`U \otimes U` representation of the unitary group of dimension 2.
+   Decomposition of the :math:`U \otimes U` representation of the unitary group of dimension 2
 
 
 .. figure:: HelpSystem.gif
@@ -42,12 +42,12 @@ How to start using RepLAB?
 Have a look at the :doc:`tutorials <tutorials/index>`!
 They have everything to get you started, from installation instructions to hands-on examples.
 
-The documentation of **RepLAB** is organized along 4 directions, following this `approach <https://www.divio.com/blog/documentation/>`_:
+The documentation of **RepLAB** is organized along `4 directions <https://www.divio.com/blog/documentation/>`_:
 
--  :doc:`Tutorials <tutorials/index>`: are short hands-on presentations that give you a taste of the goodness of **RepLAB**
--  :doc:`How-to guides <howto/index>`: are concise recipes that show you how to achieve a specific goal
--  :doc:`Topic guides <topic/index>`: are understanding-oriented presentations that explain the big picture and the key notions on which this software is built
--  :doc:`Technical reference <api/index>`: contains a complete and accurate description of each object of the library
+-  :doc:`Tutorials <tutorials/index>` are short hands-on presentations that give you a taste of the goodness of **RepLAB**
+-  :doc:`How-to guides <howto/index>` are concise recipes that show you how to achieve specific goals
+-  :doc:`Topic guides <topic/index>` are understanding-oriented presentations that explain the big picture and the key notions on which this software is built
+-  :doc:`Technical reference <api/index>` contains a complete and accurate description of each object of the library
 
 Work in progress
 ----------------
@@ -58,7 +58,7 @@ Work in progress
 - We are still working on the estimation/control of numerical errors (a few criteria are currently hard-coded).
   That said, **RepLAB** works fine for representations of medium size ($d$ equal to a few thousands).
 - While RepLAB has a basic implementation of computational group theory algorithms, it does not offer much to work with groups.
-- Construction of representation by images (`replab.RepByImages`) should be done only with matrices that can be represented exactly in floating-point arithmetic, as errors accumulate quickly otherwise (in most of our cases, we use signed permutation matrices which are fine).
+- Currently, the construction of representation by images (`replab.RepByImages`) should be done only with matrices that can be represented exactly in floating-point arithmetic, as errors accumulate quickly otherwise (in most of our cases, we use signed permutation matrices which are fine).
 - The documentation is still a work in progress, and tutorials/how to guides/... will be added as the project progresses.
 
 Why RepLAB?

@@ -6,19 +6,21 @@ We write here miscellaneous tips and tricks.
 Sphinx and Jupyter required packages
 ------------------------------------
 
-I tried with Python 3 in a dedicated virtualenv in Ubuntu 18.04 as follows:
+In order to compile the, a Python 3 virtualenv with adequate packages should be present in the folder "replab/sphinxdocs/sphinx2". In Ubuntu 18.04, this can be prepared as follows:
 
-Run somewhere
+Run from the "replab" folder
 
 ::
 
-    python3 -m venv sphinx
+    mkdir sphinxdocs
+    cd sphinxdocs
+    python3 -m venv sphinx2
 
 Then enter the environment
 
 ::
 
-    source sphinx/bin/activate
+    source sphinx2/bin/activate
 
 Install the following python packages:
 
@@ -38,11 +40,25 @@ This can be done with the command
 
 (add the option "--user" if not installing inside a virtual environment)
 
-For the Jupyter notebooks:
+For the Jupyter notebooks, further install the following packages (see also `<https://nbsphinx.readthedocs.io/en/latest/installation.html>`_):
 
-Follow `<https://nbsphinx.readthedocs.io/en/latest/installation.html>`_
+- jupyter-core
+- jupyter-client
+- nbconvert
+- nbsphinx
+- octave-kernel
 
-In particular, install the Python package nbsphinx, and the Ubuntu package pandoc
+This can be done with the command
+
+::
+
+    pip install jupyter-core jupyter-client nbconvert nbsphinx octave-kernel
+
+Also, make sure the pandoc package is available. On Ubuntu, this can be installed with with command
+
+::
+
+    sudo apt install pandoc
 
 
 Later on?

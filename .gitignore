@@ -133,3 +133,9 @@ tests/doctest
 
 ## Jupyter checkpoints
 .ipynb_checkpoints
+
+##---------------------------------------------------
+# python virtual environment
+##---------------------------------------------------
+sphinxdocs
+

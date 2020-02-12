@@ -97,7 +97,7 @@ function help(varargin)
         % We are looking for a replab-related help
         name = varargin{1};
         if isempty(codeBase)
-            fprintf('Building help index...');
+            disp('Building help index...');
             [srcRoot, ~, ~] = fileparts(mfilename('fullpath'));
             codeBase = replab.infra.crawl(srcRoot);
             disp('done.');
